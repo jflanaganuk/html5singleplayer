@@ -26,7 +26,7 @@ const enemy = new Enemy({
 });
 
 setInterval(() => {
-    ctx.clearRect(0, 0, 500, 500);
+    ctx.clearRect(0, 0, WIDTH, HEIGHT);
     player.update(ctx, WIDTH, HEIGHT, message);
     enemy.update(ctx, WIDTH, HEIGHT, message);
 }, 40);
