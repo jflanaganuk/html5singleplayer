@@ -122,6 +122,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/data/enemyList.json":
+/*!*********************************!*\
+  !*** ./src/data/enemyList.json ***!
+  \*********************************/
+/*! exports provided: 0, 1, 2, default */
+/***/ (function(module) {
+
+eval("module.exports = [{\"x\":40,\"spdX\":20,\"y\":100,\"spdY\":10,\"name\":\"E\"},{\"x\":300,\"spdX\":-20,\"y\":150,\"spdY\":9,\"name\":\"e\"},{\"x\":20,\"spdX\":-5,\"y\":20,\"spdY\":-2,\"name\":\"B\"}];\n\n//# sourceURL=webpack:///./src/data/enemyList.json?");
+
+/***/ }),
+
+/***/ "./src/data/playerList.json":
+/*!**********************************!*\
+  !*** ./src/data/playerList.json ***!
+  \**********************************/
+/*! exports provided: x, spdX, y, spdY, name, default */
+/***/ (function(module) {
+
+eval("module.exports = {\"x\":50,\"spdX\":30,\"y\":40,\"spdY\":5,\"name\":\"P\"};\n\n//# sourceURL=webpack:///./src/data/playerList.json?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -130,7 +152,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _classes_player__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/player */ \"./src/classes/player.js\");\n/* harmony import */ var _classes_enemy__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./classes/enemy */ \"./src/classes/enemy.js\");\n\n\n\nconst ctx = document.getElementById('ctx').getContext('2d');\nctx.font = '30px Arial';\n\nconst HEIGHT = 500;\nconst WIDTH = 500;\n\nconst message = 'Bouncing';\n\nconst player = new _classes_player__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n    x: 50,\n    spdX: 30,\n    y: 40,\n    spdY: 5,\n    name: 'P'\n});\n\nconst enemyList = [\n    {\n        x: 40,\n        spdX: 20,\n        y: 100,\n        spdY: 10,\n        name: 'E'\n    },\n    {\n        x: 300,\n        spdX: -20,\n        y: 150,\n        spdY: 9,\n        name: 'e'\n    },\n    {\n        x: 20,\n        spdX: -5,\n        y: 20,\n        spdY: -2,\n        name: 'B'\n    }\n];\n\nconst enemies = enemyList.map((enemy) => {\n    return new _classes_enemy__WEBPACK_IMPORTED_MODULE_1__[\"default\"](enemy);\n});\n\nsetInterval(() => {\n    ctx.clearRect(0, 0, WIDTH, HEIGHT);\n    player.update(ctx, WIDTH, HEIGHT, message);\n    enemies.map((enemy) => {\n        enemy.update(ctx, WIDTH, HEIGHT, message);\n    })\n}, 40);\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _classes_player__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/player */ \"./src/classes/player.js\");\n/* harmony import */ var _classes_enemy__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./classes/enemy */ \"./src/classes/enemy.js\");\n/* harmony import */ var _data_playerList_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data/playerList.json */ \"./src/data/playerList.json\");\nvar _data_playerList_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./data/playerList.json */ \"./src/data/playerList.json\", 1);\n/* harmony import */ var _data_enemyList_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data/enemyList.json */ \"./src/data/enemyList.json\");\nvar _data_enemyList_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./data/enemyList.json */ \"./src/data/enemyList.json\", 1);\n\n\n\n\n\n\nconst ctx = document.getElementById('ctx').getContext('2d');\nctx.font = '30px Arial';\n\nconst HEIGHT = 500;\nconst WIDTH = 500;\n\nconst message = 'Bouncing';\n\nconst player = new _classes_player__WEBPACK_IMPORTED_MODULE_0__[\"default\"](_data_playerList_json__WEBPACK_IMPORTED_MODULE_2__);\n\nconst enemyList = _data_enemyList_json__WEBPACK_IMPORTED_MODULE_3__;\n\nconst enemies = enemyList.map((enemy) => {\n    return new _classes_enemy__WEBPACK_IMPORTED_MODULE_1__[\"default\"](enemy);\n});\n\nsetInterval(() => {\n    ctx.clearRect(0, 0, WIDTH, HEIGHT);\n    player.update(ctx, WIDTH, HEIGHT, message);\n    enemies.map((enemy) => {\n        enemy.update(ctx, WIDTH, HEIGHT, message);\n    })\n}, 40);\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
