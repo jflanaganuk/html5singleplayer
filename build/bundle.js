@@ -94,7 +94,19 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Enemy; });\nclass Enemy {\n    constructor({x, spdX, y, spdY, name}){\n        this.x = x;\n        this.spdX = spdX;\n        this.y = y;\n        this.spdY = spdY;\n        this.name = name;\n    }\n\n    getX(){\n        return this.x;\n    }\n\n    getSpdX(){\n        return this.spdX;\n    }\n\n    getY(){\n        return this.y;\n    }\n\n    getSpdY(){\n        return this.spdY;\n    }\n\n    getName(){\n        return this.name;\n    }\n\n    setX(input) {\n        this.x = input;\n    }\n\n    setSpdX(input) {\n        this.spdX = input;\n    }\n\n    setY(input) {\n        this.y = input;\n    }\n\n    setSpdY(input) {\n        this.spdY = input;\n    }\n\n    setName(input) {\n        this.name = input;\n    }\n\n    update(ctx, width, height, message) {\n        this.x += this.spdX;\n        this.y += this.spdY;\n\n        if (this.x < 0 || this.x > width) {\n            console.log(message);\n            this.spdX = -this.spdX;\n        }\n\n        if (this.y < 0 || this.y > height) {\n            console.log(message);\n            this.spdY = -this.spdY;\n        }\n\n        this.draw(ctx);\n    }\n\n    draw(ctx) {\n       ctx.fillText(this.name, this.x, this.y); \n    }\n}\n\n//# sourceURL=webpack:///./src/classes/enemy.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Enemy; });\n/* harmony import */ var _entity__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./entity */ \"./src/classes/entity.js\");\n\n\nclass Enemy extends _entity__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\n}\n\n//# sourceURL=webpack:///./src/classes/enemy.js?");
+
+/***/ }),
+
+/***/ "./src/classes/entity.js":
+/*!*******************************!*\
+  !*** ./src/classes/entity.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Entity; });\nclass Entity {\n    constructor({x, spdX, y, spdY, name}){\n        this.x = x;\n        this.spdX = spdX;\n        this.y = y;\n        this.spdY = spdY;\n        this.name = name;\n    }\n\n    getX(){\n        return this.x;\n    }\n\n    getSpdX(){\n        return this.spdX;\n    }\n\n    getY(){\n        return this.y;\n    }\n\n    getSpdY(){\n        return this.spdY;\n    }\n\n    getName(){\n        return this.name;\n    }\n\n    setX(input) {\n        this.x = input;\n    }\n\n    setSpdX(input) {\n        this.spdX = input;\n    }\n\n    setY(input) {\n        this.y = input;\n    }\n\n    setSpdY(input) {\n        this.spdY = input;\n    }\n\n    setName(input) {\n        this.name = input;\n    }\n\n    update(ctx, width, height, message) {\n        this.x += this.spdX;\n        this.y += this.spdY;\n\n        if (this.x < 0 || this.x > width) {\n            console.log(message);\n            this.spdX = -this.spdX;\n        }\n\n        if (this.y < 0 || this.y > height) {\n            console.log(message);\n            this.spdY = -this.spdY;\n        }\n\n        this.draw(ctx);\n    }\n\n    draw(ctx) {\n       ctx.fillText(this.name, this.x, this.y); \n    }\n}\n\n//# sourceURL=webpack:///./src/classes/entity.js?");
 
 /***/ }),
 
@@ -106,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Player; });\nclass Player {\n    constructor({x, spdX, y, spdY, name}){\n        this.x = x;\n        this.spdX = spdX;\n        this.y = y;\n        this.spdY = spdY;\n        this.name = name;\n    }\n\n    getX(){\n        return this.x;\n    }\n\n    getSpdX(){\n        return this.spdX;\n    }\n\n    getY(){\n        return this.y;\n    }\n\n    getSpdY(){\n        return this.spdY;\n    }\n\n    getName(){\n        return this.name;\n    }\n\n    setX(input) {\n        this.x = input;\n    }\n\n    setSpdX(input) {\n        this.spdX = input;\n    }\n\n    setY(input) {\n        this.y = input;\n    }\n\n    setSpdY(input) {\n        this.spdY = input;\n    }\n\n    setName(input) {\n        this.name = input;\n    }\n\n    update(ctx, width, height, message) {\n        this.x += this.spdX;\n        this.y += this.spdY;\n\n        if (this.x < 0 || this.x > width) {\n            console.log(message);\n            this.spdX = -this.spdX;\n        }\n\n        if (this.y < 0 || this.y > height) {\n            console.log(message);\n            this.spdY = -this.spdY;\n        }\n\n        this.draw(ctx);\n    }\n\n    draw(ctx) {\n       ctx.fillText(this.name, this.x, this.y); \n    }\n}\n\n//# sourceURL=webpack:///./src/classes/player.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Player; });\n/* harmony import */ var _entity__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./entity */ \"./src/classes/entity.js\");\n\n\nclass Player extends _entity__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\n}\n\n//# sourceURL=webpack:///./src/classes/player.js?");
 
 /***/ }),
 
