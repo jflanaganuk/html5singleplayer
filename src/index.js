@@ -1,4 +1,5 @@
 import Player from './classes/player';
+import Enemy from './classes/enemy';
 
 const ctx = document.getElementById('ctx').getContext('2d');
 ctx.font = '30px Arial';
@@ -16,7 +17,7 @@ const player = new Player({
     name: 'P'
 });
 
-const enemy = new Player({
+const enemy = new Enemy({
     x: 40,
     spdX: 20,
     y: 100,
