@@ -52,12 +52,10 @@ export default class Entity {
         this.y += this.spdY;
 
         if (this.x < 0 || this.x > width) {
-            console.log(message);
             this.spdX = -this.spdX;
         }
 
         if (this.y < 0 || this.y > height) {
-            console.log(message);
             this.spdY = -this.spdY;
         }
 
