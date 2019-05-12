@@ -86,14 +86,27 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/classes/player.js":
+/*!*******************************!*\
+  !*** ./src/classes/player.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Player; });\nclass Player {\n    constructor({x, spdX, y, spdY, name}){\n        this.x = x;\n        this.spdX = spdX;\n        this.y = y;\n        this.spdY = spdY;\n        this.name = name;\n    }\n\n    getX(){\n        return this.x;\n    }\n\n    getSpdX(){\n        return this.spdX;\n    }\n\n    getY(){\n        return this.y;\n    }\n\n    getSpdY(){\n        return this.spdY;\n    }\n\n    getName(){\n        return this.name;\n    }\n\n    setX(input) {\n        this.x = input;\n    }\n\n    setSpdX(input) {\n        this.spdX = input;\n    }\n\n    setY(input) {\n        this.y = input;\n    }\n\n    setSpdY(input) {\n        this.spdY = input;\n    }\n\n    setName(input) {\n        this.name = input;\n    }\n\n    update(ctx, width, height, message) {\n        this.x += this.spdX;\n        this.y += this.spdY;\n\n        if (this.x < 0 || this.x > width) {\n            console.log(message);\n            this.spdX = -this.spdX;\n        }\n\n        if (this.y < 0 || this.y > height) {\n            console.log(message);\n            this.spdY = -this.spdY;\n        }\n\n        this.draw(ctx);\n    }\n\n    draw(ctx) {\n       ctx.fillText(this.name, this.x, this.y); \n    }\n}\n\n//# sourceURL=webpack:///./src/classes/player.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("console.log(\"😎 Success!\")\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _classes_player__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/player */ \"./src/classes/player.js\");\n\n\nconst ctx = document.getElementById('ctx').getContext('2d');\nctx.font = '30px Arial';\n\nconst HEIGHT = 500;\nconst WIDTH = 500;\n\nconst message = 'Bouncing';\n\nconst player = new _classes_player__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n    x: 50,\n    spdX: 30,\n    y: 40,\n    spdY: 5,\n    name: 'P'\n});\n\nconst enemy = new _classes_player__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n    x: 40,\n    spdX: 20,\n    y: 100,\n    spdY: 10,\n    name: 'E'\n});\n\nsetInterval(() => {\n    ctx.clearRect(0, 0, 500, 500);\n    player.update(ctx, WIDTH, HEIGHT, message);\n    enemy.update(ctx, WIDTH, HEIGHT, message);\n}, 40);\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
