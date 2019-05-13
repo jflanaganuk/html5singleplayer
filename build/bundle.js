@@ -122,6 +122,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/classes/input.js":
+/*!******************************!*\
+  !*** ./src/classes/input.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Input; });\nclass Input {\n    \n}\n\n//# sourceURL=webpack:///./src/classes/input.js?");
+
+/***/ }),
+
 /***/ "./src/classes/player.js":
 /*!*******************************!*\
   !*** ./src/classes/player.js ***!
@@ -130,7 +142,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Player; });\n/* harmony import */ var _entity__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./entity */ \"./src/classes/entity.js\");\n\n\nclass Player extends _entity__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\n}\n\n//# sourceURL=webpack:///./src/classes/player.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Player; });\n/* harmony import */ var _entity__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./entity */ \"./src/classes/entity.js\");\n\n\nclass Player extends _entity__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\n    update(ctx) {\n        this.draw(ctx);\n    }\n}\n\n//# sourceURL=webpack:///./src/classes/player.js?");
 
 /***/ }),
 
@@ -164,7 +176,7 @@ eval("module.exports = {\"x\":50,\"spdX\":30,\"y\":40,\"spdY\":5,\"name\":\"P\"}
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _classes_player__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/player */ \"./src/classes/player.js\");\n/* harmony import */ var _classes_enemy__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./classes/enemy */ \"./src/classes/enemy.js\");\n/* harmony import */ var _classes_collisions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./classes/collisions */ \"./src/classes/collisions.js\");\n/* harmony import */ var _data_playerList_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data/playerList.json */ \"./src/data/playerList.json\");\nvar _data_playerList_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./data/playerList.json */ \"./src/data/playerList.json\", 1);\n/* harmony import */ var _data_enemyList_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./data/enemyList.json */ \"./src/data/enemyList.json\");\nvar _data_enemyList_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./data/enemyList.json */ \"./src/data/enemyList.json\", 1);\n\n\n\n\n\n\n\nconst ctx = document.getElementById('ctx').getContext('2d');\nctx.font = '30px Arial';\n\nconst HEIGHT = 500;\nconst WIDTH = 500;\n\nconst player = new _classes_player__WEBPACK_IMPORTED_MODULE_0__[\"default\"](_data_playerList_json__WEBPACK_IMPORTED_MODULE_3__);\n\nconst enemyList = _data_enemyList_json__WEBPACK_IMPORTED_MODULE_4__;\n\nconst enemies = enemyList.map((enemy) => {\n    return new _classes_enemy__WEBPACK_IMPORTED_MODULE_1__[\"default\"](enemy);\n});\n\nconst collisions = new _classes_collisions__WEBPACK_IMPORTED_MODULE_2__[\"default\"]();\n\nsetInterval(() => {\n    ctx.clearRect(0, 0, WIDTH, HEIGHT);\n    enemies.map((enemy) => {\n        enemy.update(ctx, WIDTH, HEIGHT);\n        const isColliding = collisions.testCollisionEntity(player,enemy);\n        if (isColliding) {\n            console.log('colliding');\n        }\n    })\n    player.update(ctx, WIDTH, HEIGHT);\n}, 40);\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _classes_player__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/player */ \"./src/classes/player.js\");\n/* harmony import */ var _classes_enemy__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./classes/enemy */ \"./src/classes/enemy.js\");\n/* harmony import */ var _classes_collisions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./classes/collisions */ \"./src/classes/collisions.js\");\n/* harmony import */ var _data_playerList_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data/playerList.json */ \"./src/data/playerList.json\");\nvar _data_playerList_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./data/playerList.json */ \"./src/data/playerList.json\", 1);\n/* harmony import */ var _data_enemyList_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./data/enemyList.json */ \"./src/data/enemyList.json\");\nvar _data_enemyList_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./data/enemyList.json */ \"./src/data/enemyList.json\", 1);\n/* harmony import */ var _classes_input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./classes/input */ \"./src/classes/input.js\");\n\n\n\n\n\n\n\n\n\nconst ctx = document.getElementById('ctx').getContext('2d');\nctx.font = '30px Arial';\n\nconst HEIGHT = 500;\nconst WIDTH = 500;\n\nconst player = new _classes_player__WEBPACK_IMPORTED_MODULE_0__[\"default\"](_data_playerList_json__WEBPACK_IMPORTED_MODULE_3__);\n\nconst enemyList = _data_enemyList_json__WEBPACK_IMPORTED_MODULE_4__;\n\nconst enemies = enemyList.map((enemy) => {\n    return new _classes_enemy__WEBPACK_IMPORTED_MODULE_1__[\"default\"](enemy);\n});\n\nconst collisions = new _classes_collisions__WEBPACK_IMPORTED_MODULE_2__[\"default\"]();\n\ndocument.onmousemove = function(mouse) {\n    const mouseX = mouse.clientX;\n    const mouseY = mouse.clientY;\n\n    player.setX(mouseX);\n    player.setY(mouseY);\n}\n\nsetInterval(() => {\n    ctx.clearRect(0, 0, WIDTH, HEIGHT);\n    enemies.map((enemy) => {\n        enemy.update(ctx, WIDTH, HEIGHT);\n        const isColliding = collisions.testCollisionEntity(player,enemy);\n        if (isColliding) {\n            console.log('colliding');\n        }\n    })\n    player.update(ctx, WIDTH, HEIGHT);\n}, 40);\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
