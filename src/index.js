@@ -11,8 +11,6 @@ ctx.font = '30px Arial';
 const HEIGHT = 500;
 const WIDTH = 500;
 
-const message = 'Bouncing';
-
 const player = new Player(PlayerList);
 
 const enemyList = EnemyList;
@@ -26,11 +24,11 @@ const collisions = new Collisions();
 setInterval(() => {
     ctx.clearRect(0, 0, WIDTH, HEIGHT);
     enemies.map((enemy) => {
-        enemy.update(ctx, WIDTH, HEIGHT, message);
+        enemy.update(ctx, WIDTH, HEIGHT);
         const isColliding = collisions.testCollisionEntity(player,enemy);
         if (isColliding) {
             console.log('colliding');
         }
     })
-    player.update(ctx, WIDTH, HEIGHT, message);
+    player.update(ctx, WIDTH, HEIGHT);
 }, 40);

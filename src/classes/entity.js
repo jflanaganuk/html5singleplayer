@@ -47,7 +47,12 @@ export default class Entity {
         this.name = input;
     }
 
-    update(ctx, width, height, message) {
+    update(ctx, width, height) {
+        this.updatePosition(width, height);
+        this.draw(ctx);
+    }
+
+    updatePosition(width, height) {
         this.x += this.spdX;
         this.y += this.spdY;
 
@@ -58,8 +63,6 @@ export default class Entity {
         if (this.y < 0 || this.y > height) {
             this.spdY = -this.spdY;
         }
-
-        this.draw(ctx);
     }
 
     draw(ctx) {
